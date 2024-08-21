@@ -1,0 +1,21 @@
+{
+    "name": "electron-draggable-bug",
+    "version": "1.0.0",
+    "description": "Testcase for the draggable bug",
+    "author": "Christian Geiger",
+    "contributors": [],
+    "type": "module",
+    "dependencies": {
+        "avtryck-ui-for-p-red": "^1.1.1",
+        "node-red": "^4.0.2",
+        "pekfinger-red": "^2.0.1"
+    },
+    "devDependencies": {
+        "electron": "31.4.0"
+    },
+    "main": "src/index.js",
+    "scripts": {
+        "start": "electron .",
+        "dev": "electron . dev"
+    }
+}

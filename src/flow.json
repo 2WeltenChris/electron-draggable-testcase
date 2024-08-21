@@ -1,0 +1,243 @@
+[
+    {
+        "id": "526f2ff1f405ccb9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5116743c9e5bae16",
+        "type": "web-app",
+        "name": "",
+        "shortname": "",
+        "version": "1.0",
+        "address": "localhost",
+        "port": "1881",
+        "portType": "num",
+        "tls": false,
+        "privateKey": "~/.node-red/server.key",
+        "certificate": "~/.node-red/server.cert",
+        "useTlsEnv": null,
+        "baseroute": "",
+        "authentification": "none",
+        "authentificationNode": "",
+        "globals": [
+            {
+                "key": "appIcons",
+                "value": "[{ \"rel\":\"icon\", \"href\":\"/icons/favicon-16x16.png\", \"type\":\"image/png\", \"size\":\"16x16\" }, { \"rel\":\"icon\", \"href\":\"/icons/favicon-32x32.png\", \"type\":\"image/png\", \"size\":\"32x32\" }, { \"rel\":\"icon\", \"href\":\"/public/icons/android-chrome-192x192.png\", \"type\":\"image/png\", \"size\":\"192x192\" }, { \"rel\":\"apple-touch-icon\", \"href\":\"/public/icons/apple-touch-icon.png\"} ]",
+                "type": "json"
+            },
+            {
+                "key": "carbon-theme",
+                "value": "all",
+                "type": "str",
+                "removable": false
+            },
+            {
+                "key": "carbon-css-variables",
+                "value": "{\"warning\":\"only working with 'all'/'dynamic' theme. (e.g. '--cds-interactive-01': 'red'\"}",
+                "type": "json",
+                "removable": false
+            }
+        ],
+        "defaultLanguage": "",
+        "developmentMode": true,
+        "channels": [],
+        "i18n": {},
+        "_version": "2.0.3"
+    },
+    {
+        "id": "9ba259a29e5751fc",
+        "type": "web-entry",
+        "z": "526f2ff1f405ccb9",
+        "name": "",
+        "app": "5116743c9e5bae16",
+        "route": "",
+        "events": [
+            {
+                "type": "http+ws",
+                "subtype": "GET"
+            }
+        ],
+        "authentification": "App",
+        "authentificationNode": "",
+        "outputs": 1,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "44ce48075f71ad2c"
+            ]
+        ]
+    },
+    {
+        "id": "44ce48075f71ad2c",
+        "type": "web-page",
+        "z": "526f2ff1f405ccb9",
+        "app": "5116743c9e5bae16",
+        "contentType": "page",
+        "content": "@avtryck-ui-for-p-red/Carbon Design/App",
+        "serverEvents": [],
+        "clientEvents": [],
+        "channelEvents": {},
+        "i18n": {},
+        "inputs": 1,
+        "structure": {
+            "type": "layout",
+            "exports": [],
+            "properties": {
+                "company_name": {
+                    "value": "\"Electron\"",
+                    "bind": false
+                },
+                "app_name": {
+                    "value": "\"Draggable Testcase\"",
+                    "bind": false
+                },
+                "title": {
+                    "value": "",
+                    "bind": false
+                },
+                "href": {
+                    "value": "",
+                    "bind": false
+                },
+                "sidenav_rail": {
+                    "value": "false",
+                    "bind": false
+                },
+                "sidenav_is_open": {
+                    "value": "false",
+                    "bind": false
+                },
+                "persistent_hamburger_menu": {
+                    "value": "false",
+                    "bind": false
+                },
+                "grid_mode": {
+                    "value": "\"wide\"",
+                    "bind": false
+                },
+                "grid_gutter": {
+                    "value": "\"default\"",
+                    "bind": false
+                },
+                "grid_padding": {
+                    "value": "false",
+                    "bind": false
+                },
+                "currentTheme": {
+                    "value": "\"$global['carbon-theme']\"",
+                    "bind": false
+                },
+                "notification": {
+                    "value": "{}",
+                    "bind": false
+                },
+                "wrap": {
+                    "value": "\"auto\"",
+                    "bind": false
+                },
+                "id": {
+                    "value": "",
+                    "bind": false
+                },
+                "class": {
+                    "value": "",
+                    "bind": false
+                }
+            },
+            "slots": {
+                "header navigation": {
+                    "components": [],
+                    "use": {},
+                    "collapsed": true
+                },
+                "header actions": {
+                    "components": [],
+                    "use": {},
+                    "collapsed": true
+                },
+                "side navigation": {
+                    "components": [],
+                    "use": {},
+                    "collapsed": true
+                },
+                "default": {
+                    "components": [
+                        {
+                            "type": "code",
+                            "properties": {},
+                            "code": "<!-- Define draggable region -->\n<style>\n    :global(.bx--header) {\n        -webkit-app-region: drag;\n    }\n    :global(.bx--header *) {\n        -webkit-app-region: none;\n    }\n</style>",
+                            "slots": {},
+                            "collapsed": false,
+                            "editing": true
+                        }
+                    ],
+                    "use": {},
+                    "collapsed": false
+                }
+            },
+            "componentId": "@avtryck-ui-for-p-red/Carbon Design/App",
+            "name": "App",
+            "eventHandlers": {
+                "click": {
+                    "value": "",
+                    "type": "custom"
+                }
+            },
+            "errors": {
+                "definition": "",
+                "properties": {},
+                "child": false
+            }
+        },
+        "stores": [],
+        "name": "",
+        "outputs": 0,
+        "statusCode": 200,
+        "_version": "2.2.1",
+        "x": 290,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1ab4d752113d7c42",
+        "type": "inject",
+        "z": "526f2ff1f405ccb9",
+        "name": "on startup",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "f8831911255521e5"
+            ]
+        ]
+    },
+    {
+        "id": "f8831911255521e5",
+        "type": "function",
+        "z": "526f2ff1f405ccb9",
+        "name": "open window",
+        "func": "const bridge = global.get('bridge')\nbridge.openWindow()",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    }
+]

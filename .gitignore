@@ -1,0 +1,10 @@
+node_modules
+*.json.backup
+.sessions.json
+.config*
+*.crt
+*.key
+web/build
+web/public/avtryck-ui
+*.temp
+*~lock~
